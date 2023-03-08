@@ -13,9 +13,9 @@ nav.menu {
   width: 270px;
   min-height: 100vh;
   padding: 20px;
-  background: white;
+  background: rgba(0, 0, 0, 0.874);
   opacity: 0.9;
-  box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+  box-shadow: -2px 0 4px hsla(0, 0%, 0%, 0.1);
   transition: 0.3s;
   justify-content: center;
   text-align: center;
@@ -42,7 +42,7 @@ li {
 
 a {
   text-decoration: none;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 a:hover {
@@ -74,6 +74,7 @@ a:hover {
   .bigmenu-ul {
     display: flex;
     gap: 200px;
-    font-size: 25px;
+    font-size: 15px;
+    margin-top: -1.5%;
   }
 }
