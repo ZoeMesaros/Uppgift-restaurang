@@ -18,6 +18,8 @@ nav.menu {
   box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
   transition: 0.3s;
   justify-content: center;
+  text-align: center;
+  font-size: 27px;
 }
 
 nav.active {
@@ -31,4 +33,46 @@ nav.active {
   font-size: 35px;
   cursor: pointer;
   color: red;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  cursor: pointer;
+  color: gray;
+}
+
+.bigmenu {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .bigmenu {
+    display: flex;
+    justify-content: center;
+  }
+  .menu {
+    display: none;
+  }
+
+  #open {
+    display: none;
+  }
+
+  #close {
+    display: none;
+  }
+
+  .bigmenu-ul {
+    display: flex;
+    gap: 200px;
+    font-size: 25px;
+  }
 }

@@ -43,9 +43,9 @@ export const Nav = () => {
       </nav>
 
       {/*  */}
-      <nav>
-        <ul>
-          <li>
+      <nav className="bigmenu">
+        <ul className="bigmenu-ul">
+          <li className="bigmenu-li">
             <Link to="/">Hem</Link>
           </li>
           <li>
