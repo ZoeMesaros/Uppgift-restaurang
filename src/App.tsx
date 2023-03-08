@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import axios from "axios";
 import "./App.scss";
+import { Nav } from "./components/Nav/Nav";
 
 function App() {
 // Make a request for a user with a given ID
@@ -16,6 +17,7 @@ axios.get('https://school-restaurant-api.azurewebsites.net/restaurant/6408978376
   })
   return (
     <>
+      <Nav />
       <header className="home">
         <h1>Restaurang</h1>
       </header>
