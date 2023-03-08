@@ -1,0 +1,34 @@
+#open {
+  position: fixed;
+  cursor: pointer;
+  right: 0;
+  font-size: 40px;
+  padding: 10px 20px;
+}
+
+nav.menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 270px;
+  min-height: 100vh;
+  padding: 20px;
+  background: white;
+  opacity: 0.9;
+  box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+  transition: 0.3s;
+  justify-content: center;
+}
+
+nav.active {
+  right: 0;
+}
+
+#close {
+  position: absolute;
+  right: 0;
+  padding: 0px 25px;
+  font-size: 35px;
+  cursor: pointer;
+  color: red;
+}

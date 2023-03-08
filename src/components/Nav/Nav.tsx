@@ -1,19 +1,61 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import "./Nav.scss";
 
 export const Nav = () => {
+  useEffect(() => {
+    let menu = document.querySelector(".menu") as HTMLElement;
+    let open = document.querySelector("#open") as HTMLElement;
+    let close = document.querySelector("#close") as HTMLElement;
+
+    console.log(open);
+
+    if (open) {
+      console.log(open);
+      open.onclick = () => {
+        menu?.classList.add("active");
+      };
+    }
+
+    if (close) {
+      close.onclick = () => {
+        menu?.classList.remove("active");
+      };
+    }
+  });
+
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Hem</Link>
-        </li>
-        <li>
-          <Link to="/booking">Bokningar</Link>
-        </li>
-        <li>
-          <Link to="/contact">Kontakt</Link>
-        </li>
-      </ul>
-    </nav>
+    <>
+      <i className="fa-solid fa-bars" id="open"></i>
+      <nav className="menu">
+        <i className="fa-solid fa-x" id="close"></i>
+        <ul>
+          <li>
+            <Link to="/">Hem</Link>
+          </li>
+          <li>
+            <Link to="/booking">Bokningar</Link>
+          </li>
+          <li>
+            <Link to="/contact">Kontakt</Link>
+          </li>
+        </ul>
+      </nav>
+
+      {/*  */}
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Hem</Link>
+          </li>
+          <li>
+            <Link to="/booking">Bokningar</Link>
+          </li>
+          <li>
+            <Link to="/contact">Kontakt</Link>
+          </li>
+        </ul>
+      </nav>
+    </>
   );
 };
