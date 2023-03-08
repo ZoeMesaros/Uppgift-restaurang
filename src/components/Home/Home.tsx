@@ -1,12 +1,8 @@
 import { Nav } from "../Nav/Nav";
-import './Home.scss'
+import "./Home.scss";
 
 export const Home = () => {
-  return (
-    <>
-    <Nav></Nav>
-    </>
-  );
+  return <></>;
 };
 
 export default Home;
