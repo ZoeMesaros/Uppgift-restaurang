@@ -1,4 +1,3 @@
-import React from "react";
 import { Outlet } from "react-router-dom";
 import axios from "axios";
 import "./App.scss";
@@ -6,10 +5,11 @@ import "./App.scss";
 function App() {
 
   const API = "https://school-restaurant-api.azurewebsites.net"
+
   //_______________________________________________HÄMTA RESTURANG_______________________________________________________
   // axios
   //   .get(
-  //     "https://school-restaurant-api.azurewebsites.net/restaurant/6408978376187b915f68e168"
+  //     `${API}/restaurant/6408978376187b915f68e168`
   //   )
   //   .then(function (response) {
   //     // handle success
@@ -22,7 +22,7 @@ function App() {
 
   //_______________________________________________SKAPA BOKING_______________________________________________________
 
-  //   axios.post('https://school-restaurant-api.azurewebsites.net/booking/create', {
+  //   axios.post(`${API}/booking/create`, {
   //   "restaurantId": "6408978376187b915f68e168",
   //   "date": "2022-01-01",
   //   "time": "18:00",
@@ -47,7 +47,7 @@ function App() {
 
 
   // axios.get(
-  //   "https://school-restaurant-api.azurewebsites.net/booking/640998d376187b915f68e17b"
+  //   `${API}/booking/640998d376187b915f68e17b`
   // )
   // .then(function (response) {
   //   // handle success
@@ -62,17 +62,17 @@ function App() {
 
 
 
-//  axios.get(
-//   "https://school-restaurant-api.azurewebsites.net/booking/restaurant/6408978376187b915f68e168"
-// )
-// .then(function (response) {
-//   // handle success
-//   console.log(response);
-// })
-// .catch(function (error) {
-//   // handle error
-//   console.log(error);
-// });
+ axios.get(
+  `${API}/booking/restaurant/6408978376187b915f68e168`
+)
+.then(function (response) {
+  // handle success
+  console.log(response);
+})
+.catch(function (error) {
+  // handle error
+  console.log(error);
+});
 
  //_______________________________________________TA BORT EN BOKING ___________________________________________
 
