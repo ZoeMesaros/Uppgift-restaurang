@@ -1,3 +1,6 @@
+@use "../styles/mixins" as m;
+@use "../styles/variables" as v;
+
 footer {
   position: relative;
   position: fixed;
@@ -11,12 +14,19 @@ footer {
     position: absolute;
     display: flex;
     justify-content: space-evenly;
-    padding-top: 0.5%;
+    padding-top: 3%;
     width: 30%;
     padding-left: 15%;
+    @include m.md {
+      padding-top: 0.5%;
+    }
   }
   .adress {
-    padding-left: 2%;
+    padding-left: 40%;
     font-size: 10px;
+    @include m.md {
+      padding-left: 2%;
+      font-size: 10px;
+    }
   }
 }
