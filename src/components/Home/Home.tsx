@@ -7,7 +7,6 @@ import "./Home.scss";
 export const Home = () => {
   return (
     <>
-      <Header />
       <main className="mainSection">
         <p className="mainText">
           Välkommen till Yummy buger! Vi serverar gourméthamburgare på
@@ -20,7 +19,6 @@ export const Home = () => {
           <Link to="/booking">Boka</Link>
         </button>
       </main>
-      <Footer />
     </>
   );
 };

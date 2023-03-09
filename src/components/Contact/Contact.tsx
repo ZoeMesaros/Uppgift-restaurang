@@ -6,9 +6,7 @@ import "./Contact.scss";
 export const Contact = () => {
   return (
     <>
-      <Header />
       <Form />
-      <Footer />
     </>
   );
 };
