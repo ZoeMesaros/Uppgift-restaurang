@@ -28,11 +28,11 @@ export const Admin = () => {
 
   function getData(searchText: string) {
     axios
-      .get<ISearchthebooking>(
+      .get<ISearchBookings>(
         `https://school-restaurant-api.azurewebsites.net/${searchText}api-doc/custimer/:id`
       )
       .then((response) => {
-        // createHtml(response.data.Search);
+        createHtml(response.data.search);
       });
   }
 
