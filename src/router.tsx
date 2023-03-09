@@ -3,6 +3,7 @@ import App from "./App";
 import Home from "./components/Home/Home";
 import { Contact } from "./components/Contact/Contact";
 import BookingForm from "./components/Booking/Booking";
+import { Admin } from "./components/Admin/searchbookning";
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/admin",
+        element: <Admin />,
       },
     ],
   },
