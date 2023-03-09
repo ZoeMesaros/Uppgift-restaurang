@@ -43,11 +43,11 @@ export const Admin = () => {
 
     container.innerHTML = "";
     for (let i = 0; i < search.length; i++) {
-      let name1: HTMLHeadingElement = document.createElement("h3");
+      let info: HTMLHeadingElement = document.createElement("h3");
 
-      //   name1.innerHTML = [i].id;
+      info.innerHTML = search[i].name;
 
-      container.appendChild(name1);
+      container.appendChild(info);
     }
   }
   return (
