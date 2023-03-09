@@ -1,3 +1,10 @@
+import { Header } from "../Nav/Header";
+
 export const Contact = () => {
-  return <h1>Kontaktsida</h1>;
+  return (
+    <>
+      <Header />
+      <h1>Kontaktsida</h1>;
+    </>
+  );
 };

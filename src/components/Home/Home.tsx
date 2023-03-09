@@ -1,22 +1,26 @@
 import { Nav } from "../Nav/Nav";
-import logo from "../../assets/burger3.png";
+import { Link } from "react-router-dom";
+import { Header } from "../Nav/Header";
+import { Footer } from "../Nav/Footer";
 import "./Home.scss";
 
 export const Home = () => {
   return (
     <>
-      <header className="home">
-        <img className="logo" src={logo} alt="" />
-        <Nav />
-      </header>
+      <Header />
       <main className="mainSection">
         <p className="mainText">
           Välkommen till Yummy buger! Vi serverar gourméthamburgare på
-          amerikanskt vis. Boka ett bord via vårt bokningssystem eller kontakta
-          oss.
+          amerikanskt vis. Boka ett bord via vårt bokningssystem eller{" "}
+          <span>
+            <Link to="/contact">kontakta oss.</Link>
+          </span>
         </p>
-        <button>Boka</button>
+        <button>
+          <Link to="/booking">Boka</Link>
+        </button>
       </main>
+      <Footer />
     </>
   );
 };

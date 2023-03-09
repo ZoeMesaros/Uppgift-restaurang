@@ -1,5 +1,10 @@
+import { Header } from "../Nav/Header";
+
 export const Booking = () => {
   return (
-    <h1>Bokningssida</h1>
-  )
-}
+    <>
+      <Header />
+      <h1>Bokningssida</h1>
+    </>
+  );
+};
