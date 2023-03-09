@@ -17,9 +17,8 @@ export default function BookingForm() {
     },
   };
 
-  const [bookingForm, setBookingForm] = useState<IBookingForm>(
-    initialBookingForm
-  );
+  const [bookingForm, setBookingForm] =
+    useState<IBookingForm>(initialBookingForm);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -46,9 +45,7 @@ export default function BookingForm() {
     }));
   };
 
-  const handleSelectChange = (
-    e: React.ChangeEvent<HTMLSelectElement>
-  ) => {
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
     setBookingForm((prevBookingForm) => ({
       ...prevBookingForm,
@@ -56,9 +53,7 @@ export default function BookingForm() {
     }));
   };
 
-  const handleCustomerChange = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleCustomerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setBookingForm((prevBookingForm) => ({
       ...prevBookingForm,
@@ -70,7 +65,7 @@ export default function BookingForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="bookingForm" onSubmit={handleSubmit}>
       <label>
         Datum:
         <input
@@ -145,11 +140,12 @@ export default function BookingForm() {
           required
           value={bookingForm.customer.phone}
           onChange={handleCustomerChange}
-          pattern="[0-9]{3} - [0-9]{3} [0-9]{2} [0-9]{2}" 
+          pattern="[0-9]{3} - [0-9]{3} [0-9]{2} [0-9]{2}"
           placeholder="XXX - XXX XX XX"
         />
       </label>
-      <button type="submit" >Boka</button>
+      <i>Personuppgifter samlas in i enlighet med GDPR</i>
+      <button type="submit">Boka</button>
     </form>
   );
 }
