@@ -4,6 +4,8 @@ import axios from "axios";
 import "./App.scss";
 
 function App() {
+
+  const API = "https://school-restaurant-api.azurewebsites.net"
   //_______________________________________________HÄMTA RESTURANG_______________________________________________________
   // axios
   //   .get(
@@ -44,17 +46,47 @@ function App() {
 
 
 
-  axios.get(
-    "https://school-restaurant-api.azurewebsites.net/booking/640998d376187b915f68e17b"
-  )
-  .then(function (response) {
-    // handle success
-    console.log(response);
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  });
+  // axios.get(
+  //   "https://school-restaurant-api.azurewebsites.net/booking/640998d376187b915f68e17b"
+  // )
+  // .then(function (response) {
+  //   // handle success
+  //   console.log(response);
+  // })
+  // .catch(function (error) {
+  //   // handle error
+  //   console.log(error);
+  // });
+
+ //_______________________________________________HÄMTA BOKINGAR FÖR HELA RESTURANGEN ___________________________________________
+
+
+
+//  axios.get(
+//   "https://school-restaurant-api.azurewebsites.net/booking/restaurant/6408978376187b915f68e168"
+// )
+// .then(function (response) {
+//   // handle success
+//   console.log(response);
+// })
+// .catch(function (error) {
+//   // handle error
+//   console.log(error);
+// });
+
+ //_______________________________________________TA BORT EN BOKING ___________________________________________
+
+// axios.delete(`${API}/booking/delete/6409995176187b915f68e17d`)
+//   .then(response => {
+//     console.log('Item deleted:', response.data);
+//   })
+//   .catch(error => {
+//     console.error('Error deleting item:', error);
+//   });
+
+ //__________________________________________________________________________________________
+
+
   return (
     <>
       <main className="App">
