@@ -1,10 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
-import './Booking.scss'
+import "./Booking.scss";
 import { IBookingForm } from "../../models/IBookingForm";
 
 export default function BookingForm() {
-  const [bookingForm, setBookingForm] = useState<IBookingForm>({
+  const initialBookingForm: IBookingForm = {
     restaurantId: "6408978376187b915f68e168",
     date: "",
     time: "",
@@ -15,7 +15,11 @@ export default function BookingForm() {
       email: "",
       phone: "",
     },
-  });
+  };
+
+  const [bookingForm, setBookingForm] = useState<IBookingForm>(
+    initialBookingForm
+  );
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -25,14 +29,16 @@ export default function BookingForm() {
         bookingForm
       );
       console.log(response.data.insertedId);
+      setBookingForm(initialBookingForm);
+      alert("Bokning klar");
     } catch (error) {
       console.error(error);
     }
   };
 
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const validTimes = ["18:00", "21:00"];
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setBookingForm((prevBookingForm) => ({
       ...prevBookingForm,
@@ -63,8 +69,6 @@ export default function BookingForm() {
     }));
   };
 
-  const validTimes = ["18:00", "21:00"];
-
   return (
     <form onSubmit={handleSubmit}>
       <label>
@@ -74,11 +78,17 @@ export default function BookingForm() {
           name="date"
           value={bookingForm.date}
           onChange={handleInputChange}
+          required
         />
       </label>
       <label>
         Tid:
-        <select name="time" value={bookingForm.time} onChange={handleSelectChange}>
+        <select
+          name="time"
+          value={bookingForm.time}
+          required
+          onChange={handleSelectChange}
+        >
           <option value="">Välj Tid:</option>
           {validTimes.map((time) => (
             <option key={time} value={time}>
@@ -91,6 +101,7 @@ export default function BookingForm() {
         Antal gäster:
         <input
           type="number"
+          required
           name="numberOfGuests"
           value={bookingForm.numberOfGuests}
           onChange={handleInputChange}
@@ -101,6 +112,7 @@ export default function BookingForm() {
         <input
           type="text"
           name="name"
+          required
           value={bookingForm.customer.name}
           onChange={handleCustomerChange}
         />
@@ -109,6 +121,7 @@ export default function BookingForm() {
         Efternamn:
         <input
           type="text"
+          required
           name="lastname"
           value={bookingForm.customer.lastname}
           onChange={handleCustomerChange}
@@ -119,6 +132,7 @@ export default function BookingForm() {
         <input
           type="email"
           name="email"
+          required
           value={bookingForm.customer.email}
           onChange={handleCustomerChange}
         />
@@ -128,11 +142,14 @@ export default function BookingForm() {
         <input
           type="tel"
           name="phone"
+          required
           value={bookingForm.customer.phone}
           onChange={handleCustomerChange}
+          pattern="[0-9]{3} - [0-9]{3} [0-9]{2} [0-9]{2}" 
+          placeholder="XXX - XXX XX XX"
         />
       </label>
-      <button type="submit">Boka</button>
+      <button type="submit" >Boka</button>
     </form>
   );
 }

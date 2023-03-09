@@ -1,7 +1,6 @@
 import { Nav } from "../Nav/Nav";
 import { Link } from "react-router-dom";
 import { Header } from "../Nav/Header";
-import { Footer } from "../Nav/Footer";
 import "./Home.scss";
 
 const Home = () => {
