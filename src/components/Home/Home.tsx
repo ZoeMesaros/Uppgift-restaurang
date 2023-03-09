@@ -4,7 +4,7 @@ import { Header } from "../Nav/Header";
 import { Footer } from "../Nav/Footer";
 import "./Home.scss";
 
-export const Home = () => {
+const Home = () => {
   return (
     <>
       <main className="mainSection">
