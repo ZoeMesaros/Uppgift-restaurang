@@ -39,6 +39,9 @@ export const Nav = () => {
           <li>
             <Link to="/contact">Kontakt</Link>
           </li>
+          <li>
+            <Link to="/admin">Admin</Link>
+          </li>
         </ul>
       </nav>
 
@@ -53,6 +56,9 @@ export const Nav = () => {
           </li>
           <li>
             <Link to="/contact">Kontakt</Link>
+          </li>
+          <li>
+            <Link to="/admin">Admin</Link>
           </li>
         </ul>
       </nav>
