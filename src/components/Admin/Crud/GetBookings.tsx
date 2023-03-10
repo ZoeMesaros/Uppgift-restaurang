@@ -15,8 +15,7 @@ export const Bookings = () => {
     if (bookings.length > 0) return;
     getData();
   });
-  let bookingsHtml = bookings.map(async (booking) => {
-    await getCustomers(booking.customerId);
+  let bookingsHtml = bookings.map((booking) => {
     return <Booking booking={booking} key={booking._id}></Booking>;
   });
   return (
@@ -30,7 +29,7 @@ export const Bookings = () => {
           <th>Guests</th>
         </tr>
       </thead>
-      <tbody>{await Promise.all(bookingsHtml)}</tbody>
+      <tbody>{bookingsHtml}</tbody>
     </table>
   );
 };
