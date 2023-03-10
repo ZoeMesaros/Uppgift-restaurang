@@ -1,6 +1,5 @@
 import axios from "axios";
 
-import { ISearchthebooking } from "../../models/ISearch";
 import { ISearchBookings } from "../../models/ISearchBookings";
 
 export const Admin = () => {
@@ -32,7 +31,7 @@ export const Admin = () => {
         `https://school-restaurant-api.azurewebsites.net/${searchText}api-doc/custimer/:id`
       )
       .then((response) => {
-        createHtml(response.data.search);
+        createHtml(response.data.id);
       });
   }
 
