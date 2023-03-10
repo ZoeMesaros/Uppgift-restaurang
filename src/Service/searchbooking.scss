@@ -1,0 +1,43 @@
+#searchForm {
+  display: inline;
+  justify-content: center;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.searchbookings {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  font-size: 30px;
+  color: white;
+  text-shadow: 0 4px 4px black;
+}
+
+.btn-input {
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+
+#searchText {
+  width: 300px;
+  height: 40px;
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-size: 18px;
+}
+
+#button {
+  border: none;
+  width: 50px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+#button:hover {
+  cursor: pointer;
+  color: white;
+  background: green;
+}
