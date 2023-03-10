@@ -1,20 +1,8 @@
 import { ISearchBookings } from "../models/ISearchBookings";
 import "./searchbooking.scss";
-// import { searchBookings } from "./searchbookingservice";
+import { searchBookings } from "./searchbookingservice";
 
 export const Admin = () => {
-  // (document.getElementById("searchForm") as HTMLFormElement).addEventListener(
-  //   "submit",
-  //   async (e: SubmitEvent) => {
-  //     e.preventDefault();
-
-  //     const searchText = handleSearchText();
-
-  //     const search = await searchBookings(searchText);
-  //     createHtml(search);
-  //   }
-  // );
-
   function handleSearchText(): string {
     let searchInput: HTMLInputElement = document.getElementById(
       "searchText"
