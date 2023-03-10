@@ -28,7 +28,7 @@ export const Admin = () => {
   function getData(searchText: string) {
     axios
       .get<ISearchBookings>(
-        `https://school-restaurant-api.azurewebsites.net/${searchText}api-doc/custimer/:id`
+        `https://school-restaurant-api.azurewebsites.net/${searchText}api-doc/customer/:id`
       )
       .then((response) => {
         createHtml(response.data.id);
