@@ -17,7 +17,7 @@ export const Booking = (props: IBookingProps) => {
   return (
     <>
       <tr>
-        <td>{props.booking.id}</td>
+        <td>{props.booking._id}</td>
         <td>{props.booking.customerId}</td>
         <td>{props.booking.date}</td>
         <td>{props.booking.time}</td>

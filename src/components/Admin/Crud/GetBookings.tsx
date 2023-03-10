@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useOutletContext } from "react-router-dom";
 import { IBooking } from "../../../models/IBooking";
 import { getBookings, getCustomers } from "../../../services/bookingService";
 import { Booking } from "./ShowBooking";
@@ -16,19 +15,22 @@ export const Bookings = () => {
     if (bookings.length > 0) return;
     getData();
   });
-  let bookingsHtml = bookings.map((booking) => {
-    return <Booking booking={booking} key={booking.id}></Booking>;
+  let bookingsHtml = bookings.map(async (booking) => {
+    await getCustomers(booking.customerId);
+    return <Booking booking={booking} key={booking._id}></Booking>;
   });
   return (
-    <table className="bookingCard">
-      <tr>
-        <th>BookingId</th>
-        <th>CustomerId</th>
-        <th>Date</th>
-        <th>Time</th>
-        <th>Guests</th>
-      </tr>
-      {bookingsHtml}
+    <table className="bookings">
+      <thead>
+        <tr>
+          <th>BookingId</th>
+          <th>CustomerId</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Guests</th>
+        </tr>
+      </thead>
+      <tbody>{await Promise.all(bookingsHtml)}</tbody>
     </table>
   );
 };

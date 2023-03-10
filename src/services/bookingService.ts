@@ -11,9 +11,9 @@ export const getBookings = async (): Promise<IBooking[]> => {
   return response.data;
 };
 
-export const getCustomers = async (): Promise<ICustomer[]> => {
+export const getCustomers = async (id: string): Promise<ICustomer[]> => {
   let response = await axios.get<ICustomer[]>(
-    "https://school-restaurant-api.azurewebsites.net/customer/6408978376187b915f68e168"
+    "https://school-restaurant-api.azurewebsites.net/customer/" + id
   );
   console.log(response);
   return response.data;
