@@ -1,3 +1,5 @@
-export interface ISearchthebooking {
-  Search: ISearchthebooking[];
+import { ISearchBookings } from "./ISearchBookings";
+
+export interface ISearch {
+  Search: ISearchBookings[];
 }
