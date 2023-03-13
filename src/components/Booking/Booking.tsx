@@ -84,6 +84,7 @@ const BookingForm: React.FC = () => {
         id="date"
         value={date}
         onChange={(e) => setDate(e.target.value)}
+        className=""
       />
 
       <label htmlFor="time">Tid:</label>
