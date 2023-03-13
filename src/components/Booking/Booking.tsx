@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Booking } from '../../models/IBooking';
+import { IBookingSide } from '../../models/IBookingSide';
 
 const BookingForm: React.FC = () => {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('18:00');
   const [numberOfGuests, setNumberOfGuests] = useState(0);
-  const [bookings, setBookings] = useState<Booking[]>([]);
+  const [bookings, setBookings] = useState<IBookingSide[]>([]);
   const [name, setName] = useState('');
   const [lastname, setLastname] = useState('');
   const [email, setEmail] = useState('');
@@ -17,7 +17,7 @@ const BookingForm: React.FC = () => {
 
   useEffect(() => {
     const fetchBookings = async () => {
-      const response = await axios.get<Booking[]>(
+      const response = await axios.get<IBookingSide[]>(
         'https://school-restaurant-api.azurewebsites.net/booking/restaurant/6408978376187b915f68e168'
       );
       setBookings(response.data);
@@ -30,7 +30,7 @@ const BookingForm: React.FC = () => {
     e.preventDefault();
     console.log(bookings);
     const matchingBookings = bookings.filter(
-      (booking: Booking) => booking.date === date && booking.time === time
+      (booking: IBookingSide) => booking.date === date && booking.time === time
     );
 
     const totalBookings = matchingBookings.length;
@@ -64,7 +64,7 @@ const BookingForm: React.FC = () => {
 
   const handleSearch = () => {
     const matchingBookings = bookings.filter(
-      (booking: Booking) => booking.date === date && booking.time === time
+      (booking: IBookingSide) => booking.date === date && booking.time === time
     );
     const totalBookings = matchingBookings.length;
     console.log(matchingBookings);

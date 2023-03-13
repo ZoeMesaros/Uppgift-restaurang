@@ -1,6 +1,7 @@
 import axios from "axios";
 import { IApiResponse } from "../models/IApiResponse";
 import { IBooking } from "../models/IBooking";
+// import { IBooking } from "../models/IBookingSide";
 import { ICustomer } from "../models/ICustomer";
 
 export const getBookings = async (): Promise<IBooking[]> => {

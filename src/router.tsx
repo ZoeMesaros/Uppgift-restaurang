@@ -3,11 +3,8 @@ import App from "./App";
 import Home from "./components/Home/Home";
 import { Contact } from "./components/Contact/Contact";
 import BookingForm from "./components/Booking/Booking";
-<<<<<<< HEAD
-=======
 import { Admin } from "./components/Admin/Admin";
 
->>>>>>> develop
 
 export const router = createBrowserRouter([
   {
