@@ -2,6 +2,13 @@ h1 {
   color: red;
 }
 
-p {
-  color: green;
+table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+  }
+
+table td {
+  padding: .625em;
+  text-align: center;
 }
