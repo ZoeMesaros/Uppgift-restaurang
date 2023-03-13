@@ -4,7 +4,7 @@ import { Booking } from '../../models/IBooking';
 
 const BookingForm: React.FC = () => {
   const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
+  const [time, setTime] = useState('18:00');
   const [numberOfGuests, setNumberOfGuests] = useState(0);
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [name, setName] = useState('');
@@ -32,14 +32,11 @@ const BookingForm: React.FC = () => {
     const matchingBookings = bookings.filter(
       (booking: Booking) => booking.date === date && booking.time === time
     );
-    const totalGuests = matchingBookings.reduce(
-      (acc: number, booking: Booking) => acc + booking.numberOfGuests,
-      0
-    );
-    console.log(totalGuests);
+
+    const totalBookings = matchingBookings.length;
     console.log(matchingBookings);
 
-    if (totalGuests < TotalTables) {
+    if (totalBookings < TotalTables) {
       try {
         const response = await axios.post(
           'https://school-restaurant-api.azurewebsites.net/booking/create',
@@ -62,23 +59,17 @@ const BookingForm: React.FC = () => {
         console.error(error);
         alert('Något gick fel');
       }
-    } else {
-      alert('Det finns tyvärr inga lediga bord på denna tidpunkt.');
-    }
+    } 
   };
 
   const handleSearch = () => {
     const matchingBookings = bookings.filter(
       (booking: Booking) => booking.date === date && booking.time === time
     );
-    const totalGuests = matchingBookings.reduce(
-      (acc: number, booking: Booking) => acc + booking.numberOfGuests,
-      0
-    );
-    console.log(totalGuests);
+    const totalBookings = matchingBookings.length;
     console.log(matchingBookings);
 
-    if (totalGuests < TotalTables) {
+    if (totalBookings <= TotalTables) {
       setShowBookingForm(true);
     } else {
       alert('Det finns tyvärr inga lediga bord på denna tidpunkt.');
