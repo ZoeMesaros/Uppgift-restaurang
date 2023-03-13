@@ -3,7 +3,7 @@ import { searchBookings } from "./searchbookingservice";
 import "./searchbooking.scss";
 import { FormEvent } from "react";
 
-export const Admin = () => {
+export const SearchAdmin = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
