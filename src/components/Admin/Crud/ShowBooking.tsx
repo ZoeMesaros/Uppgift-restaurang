@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IBooking } from "../../../models/IBooking";
 import { ICustomer } from "../../../models/ICustomer";
@@ -10,13 +10,15 @@ interface IBookingProps {
 }
 
 export const Booking = (props: IBookingProps) => {
+  const [customer, setCustomer] = useState<ICustomer>();
   useEffect(() => {
-    getCustomers(props.booking.customerId);
+    const getData = async () => {
+      let allCustomers = await getCustomers(props.booking.customerId);
+      setCustomer(allCustomers[0]);
+    };
+    if (customer) return;
+    getData();
   });
-  /* 
-  const showMoreClick = () => {
-    navigate(`/animal/${props.animal.id}`);
-  }; */
   return (
     <>
       <tr>
@@ -25,7 +27,11 @@ export const Booking = (props: IBookingProps) => {
         <td>{props.booking.date}</td>
         <td>{props.booking.time}</td>
         <td>{props.booking.numberOfGuests}</td>
-        <td>{props.booking.customerId}</td>
+        <td>{customer?.name}</td>
+        <td>{customer?.lastname}</td>
+        <td>{customer?.email}</td>
+        <td>{customer?.phone}</td>
+        <td>{customer?.id}</td>
       </tr>
     </>
   );

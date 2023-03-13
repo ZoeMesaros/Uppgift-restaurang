@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { IBooking } from "../../../models/IBooking";
 import { getBookings, getCustomers } from "../../../services/bookingService";
 import { Booking } from "./ShowBooking";
+import './GetBookings.scss'
 
 export const Bookings = () => {
   const [bookings, setBookings] = useState<IBooking[]>([]);
@@ -22,11 +23,15 @@ export const Bookings = () => {
     <table className="bookings">
       <thead>
         <tr>
-          <th>BookingId</th>
-          <th>CustomerId</th>
-          <th>Date</th>
-          <th>Time</th>
-          <th>Guests</th>
+          <th>Bokning Id</th>
+          <th>Kund If</th>
+          <th>Datum</th>
+          <th>Tid</th>
+          <th>Gäster</th>
+          <th>Förnamn</th>
+          <th>Efternamn</th>
+          <th>E-mail</th>
+          <th>Telefon</th>
         </tr>
       </thead>
       <tbody>{bookingsHtml}</tbody>
