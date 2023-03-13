@@ -3,7 +3,8 @@ import App from "./App";
 import Home from "./components/Home/Home";
 import { Contact } from "./components/Contact/Contact";
 import BookingForm from "./components/Booking/Booking";
-import { Admin } from "./Service/searchbookning";
+import { Admin } from "./components/Admin/Admin";
+
 
 export const router = createBrowserRouter([
   {
