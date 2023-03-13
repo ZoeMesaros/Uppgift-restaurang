@@ -7,14 +7,15 @@
 }
 
 nav.menu {
+  z-index: 1;
   position: fixed;
   top: 0;
   right: -100%;
   width: 270px;
   min-height: 100vh;
   padding: 20px;
-  background: rgba(0, 0, 0, 0.874);
-  opacity: 0.9;
+  background: rgb(255, 255, 255);
+  line-height: 90px;
   box-shadow: -2px 0 4px hsla(0, 0%, 0%, 0.1);
   transition: 0.3s;
   justify-content: center;

@@ -1,13 +1,11 @@
 import { Nav } from "../Nav/Nav";
 import { Link } from "react-router-dom";
 import { Header } from "../Nav/Header";
-import { Footer } from "../Nav/Footer";
 import "./Home.scss";
 
-export const Home = () => {
+const Home = () => {
   return (
     <>
-      <Header />
       <main className="mainSection">
         <p className="mainText">
           Välkommen till Yummy buger! Vi serverar gourméthamburgare på
@@ -20,7 +18,6 @@ export const Home = () => {
           <Link to="/booking">Boka</Link>
         </button>
       </main>
-      <Footer />
     </>
   );
 };

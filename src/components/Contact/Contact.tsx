@@ -1,8 +1,9 @@
+import { Form } from "./Form";
 
 export const Contact = () => {
   return (
     <>
-      <h1>Kontaktsida</h1>;
+      <Form />
     </>
   );
 };

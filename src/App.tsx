@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
 import axios from "axios";
 import "./App.scss";
-import { Nav } from "./components/Nav/Nav";
 import { Header } from "./components/Nav/Header";
+import { Footer } from "./components/Nav/Footer";
 
 function App() {
 
@@ -91,11 +91,11 @@ function App() {
 
   return (
     <>
-    <Header></Header>
+    <Header/>
       <main className="App">
         <Outlet></Outlet>
       </main>
-      <footer></footer>
+      <Footer/>
     </>
   );
 }
