@@ -1,17 +1,34 @@
 import { useEffect, useState, ChangeEvent } from "react";
 import { IBooking } from "../../../models/IBooking";
-import { getBookings } from "../../../services/bookingService";
+import { getBookings, getCustomers } from "../../../services/bookingService";
 import { Booking } from "./ShowBooking";
 import "./GetBookings.scss";
+import "./searchbooking.scss";
+import { ICustomer } from "../../../models/ICustomer";
 
 export const Bookings = () => {
   const [bookings, setBookings] = useState<IBooking[]>([]);
 
-  //
+  interface IBookingProps {
+    booking: IBooking;
+  }
+
   const [searchText, setSearchText] = useState("");
 
   const handleSubmit = () => {
     bookings.find((x) => x.customerId === searchText);
+  };
+
+  const Allinfo = (props: IBookingProps) => {
+    const [searchText, setSearchText] = useState<ICustomer>();
+    useEffect(() => {
+      const getData = async () => {
+        let allinfo = await getCustomers(props.booking.customerId);
+        setSearchText(allinfo[0]);
+      };
+      if (searchText) return;
+      getData();
+    });
   };
 
   useEffect(() => {
