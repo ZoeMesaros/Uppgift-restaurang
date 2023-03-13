@@ -5,8 +5,7 @@ import { Header } from "./components/Nav/Header";
 import { Footer } from "./components/Nav/Footer";
 
 function App() {
-
-  const API = "https://school-restaurant-api.azurewebsites.net"
+  const API = "https://school-restaurant-api.azurewebsites.net";
 
   //_______________________________________________HÄMTA RESTURANG_______________________________________________________
   // axios
@@ -44,9 +43,7 @@ function App() {
   //   console.error(error);
   // });
 
-    //_______________________________________________HÄMTA BOKING_______________________________________________________
-
-
+  //_______________________________________________HÄMTA BOKING_______________________________________________________
 
   // axios.get(
   //   `${API}/booking/640998d376187b915f68e17b`
@@ -60,42 +57,38 @@ function App() {
   //   console.log(error);
   // });
 
- //_______________________________________________HÄMTA BOKINGAR FÖR HELA RESTURANGEN ___________________________________________
+  //_______________________________________________HÄMTA BOKINGAR FÖR HELA RESTURANGEN ___________________________________________
 
+  axios
+    .get(`${API}/booking/restaurant/6408978376187b915f68e168`)
+    .then(function (response) {
+      // handle success
+      console.log(response);
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    });
 
+  //_______________________________________________TA BORT EN BOKING ___________________________________________
 
- axios.get(
-  `${API}/booking/restaurant/6408978376187b915f68e168`
-)
-.then(function (response) {
-  // handle success
-  console.log(response);
-})
-.catch(function (error) {
-  // handle error
-  console.log(error);
-});
+  // axios.delete(`${API}/booking/delete/6409995176187b915f68e17d`)
+  //   .then(response => {
+  //     console.log('Item deleted:', response.data);
+  //   })
+  //   .catch(error => {
+  //     console.error('Error deleting item:', error);
+  //   });
 
- //_______________________________________________TA BORT EN BOKING ___________________________________________
-
-// axios.delete(`${API}/booking/delete/6409995176187b915f68e17d`)
-//   .then(response => {
-//     console.log('Item deleted:', response.data);
-//   })
-//   .catch(error => {
-//     console.error('Error deleting item:', error);
-//   });
-
- //__________________________________________________________________________________________
-
+  //__________________________________________________________________________________________
 
   return (
     <>
-    <Header/>
+      <Header />
       <main className="App">
         <Outlet></Outlet>
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }
