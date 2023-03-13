@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { IBooking } from "../../../models/IBooking";
-import { getBookings, getCustomers } from "../../../services/bookingService";
+import { getBookings} from "../../../services/bookingService";
 import { Booking } from "./ShowBooking";
 import './GetBookings.scss'
 
