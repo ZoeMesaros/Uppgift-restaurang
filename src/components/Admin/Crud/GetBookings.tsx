@@ -31,7 +31,6 @@ export const Bookings = () => {
     e.preventDefault();
     bookings.filter((x) => x.customerId === searchText);
   };
-  //
 
   useEffect(() => {
     const getData = async () => {
