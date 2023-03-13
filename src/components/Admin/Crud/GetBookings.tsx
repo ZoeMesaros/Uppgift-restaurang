@@ -13,12 +13,6 @@ export const Bookings = () => {
     booking: IBooking;
   }
 
-  const [searchText, setSearchText] = useState("");
-
-  const handleSubmit = () => {
-    bookings.find((x) => x.customerId === searchText);
-  };
-
   const Allinfo = (props: IBookingProps) => {
     const [searchText, setSearchText] = useState<ICustomer>();
     useEffect(() => {
@@ -29,6 +23,13 @@ export const Bookings = () => {
       if (searchText) return;
       getData();
     });
+    return <>{Allinfo}</>;
+  };
+
+  const [searchText, setSearchText] = useState("");
+
+  const handleSubmit = () => {
+    bookings.find((x) => x.customerId === searchText);
   };
 
   useEffect(() => {
@@ -43,6 +44,7 @@ export const Bookings = () => {
   let bookingsHtml = bookings.map((booking) => {
     return <Booking booking={booking} key={booking._id}></Booking>;
   });
+
   return (
     <>
       <form id="searchForm" onSubmit={handleSubmit}>
