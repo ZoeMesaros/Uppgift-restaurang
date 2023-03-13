@@ -4,6 +4,8 @@ import { IBooking } from "../../../models/IBooking";
 import { ICustomer } from "../../../models/ICustomer";
 import { getCustomers } from "../../../services/bookingService";
 import "./Showbooking.scss";
+import './GetBookings.scss'
+import './Table.scss'
 
 interface IBookingProps {
   booking: IBooking;
