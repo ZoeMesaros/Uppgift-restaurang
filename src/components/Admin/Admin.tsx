@@ -1,5 +1,9 @@
 // import { SearchAdmin } from "../../Service/searchbookning";
+import { Search } from "semantic-ui-react";
+import { idText } from "typescript";
+import { getCustomers } from "../../services/bookingService";
 import { Bookings } from "./Crud/GetBookings";
+import { Booking } from "./Crud/ShowBooking";
 
 export const Admin = () => {
   return (
