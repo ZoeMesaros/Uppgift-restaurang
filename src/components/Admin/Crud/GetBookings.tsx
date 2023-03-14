@@ -22,7 +22,8 @@ const Allinfo = (props: IBookingProps) => {
   return <>{Allinfo}</>;
 };
 
-export const Bookings = () => {
+//
+export const Bookings = (props: IBookingProps) => {
   const [bookings, setBookings] = useState<IBooking[]>([]);
 
   const [searchText, setSearchText] = useState("");
@@ -30,7 +31,12 @@ export const Bookings = () => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     bookings.filter((x) => x.customerId === searchText);
+
+    props.booking(searchText);
+    console.log(searchText);
   };
+
+  //
 
   useEffect(() => {
     const getData = async () => {
