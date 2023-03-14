@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
-import { IBooking } from "../../../models/IBooking";
+import { IBookingProps } from "../../../models/IBookingProps";
 import { ICustomer } from "../../../models/ICustomer";
 import { getCustomers } from "../../../services/bookingService";
+import { removeBooking } from "./removeBooking";
 import "./Showbooking.scss";
-
-interface IBookingProps {
-  booking: IBooking;
-}
 
 export const Booking = (props: IBookingProps) => {
   const [customer, setCustomer] = useState<ICustomer>();
+  const [isDeleted, setIsDeleted] = useState<boolean>(false);
+
   useEffect(() => {
     const getData = async () => {
       let allCustomers = await getCustomers(props.booking.customerId);
@@ -17,7 +16,17 @@ export const Booking = (props: IBookingProps) => {
     };
     if (customer) return;
     getData();
-  });
+  }, [customer, props.booking.customerId]);
+
+  const handleDeleteClick = () => {
+    removeBooking(props.booking._id);
+    setIsDeleted(true);
+  };
+
+  if (isDeleted) {
+    return null; 
+  }
+
   return (
     <>
       <tr>
@@ -31,6 +40,9 @@ export const Booking = (props: IBookingProps) => {
         <td>{customer?.email}</td>
         <td>{customer?.phone}</td>
         <td>{customer?.id}</td>
+        <td>
+          <button onClick={handleDeleteClick}>Ta bort</button>
+        </td>
       </tr>
     </>
   );
