@@ -9,6 +9,7 @@ import { ICustomer } from "../../../models/ICustomer";
 interface IBookingProps {
   booking: IBooking;
 }
+
 const Allinfo = (props: IBookingProps) => {
   const [searchText, setSearchText] = useState<ICustomer>();
   useEffect(() => {
@@ -23,7 +24,7 @@ const Allinfo = (props: IBookingProps) => {
 };
 
 //
-export const Bookings = (props: IBookingProps) => {
+export const Bookings = () => {
   const [bookings, setBookings] = useState<IBooking[]>([]);
 
   const [searchText, setSearchText] = useState("");
@@ -32,7 +33,19 @@ export const Bookings = (props: IBookingProps) => {
     e.preventDefault();
     bookings.filter((x) => x.customerId === searchText);
 
-    props.booking(searchText);
+    // bookings.filter((x) => {
+    //   setSearchText(x._id);
+    // });
+    // bookings.filter((x) => {
+    //   setSearchText(x.customerId);
+    // });
+
+    // props.booking(searchText);
+
+    bookings.find((info) => {
+      setSearchText(info.customerId + info.time);
+    });
+    setSearchText("");
     console.log(searchText);
   };
 
