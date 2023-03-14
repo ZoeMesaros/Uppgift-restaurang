@@ -4,7 +4,9 @@ import "./Home.scss";
 import Modal from "./Modal";
 
 const Home = () => {
-  const [isOpen, setIsopen] = useState(true);
+  const [isOpen, setIsopen] = useState(
+    localStorage.getItem("modal") === "true"
+  );
   return (
     <>
       <Modal open={isOpen} onClose={() => setIsopen(false)}></Modal>
