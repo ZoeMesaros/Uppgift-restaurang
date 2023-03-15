@@ -6,6 +6,7 @@ import BookingForm from "../Booking/Booking";
 // import { BookingDetails } from "./Crud/BookingDetail";
 import { Bookings } from "./Crud/GetBookings";
 import { Booking } from "./Crud/ShowBooking";
+import './Admin.scss'
 
 export const Admin = () => {
   return (
