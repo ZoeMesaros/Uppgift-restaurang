@@ -34,7 +34,7 @@ export const Nav = () => {
             <Link to="/">Hem</Link>
           </li>
           <li>
-            <Link to="/booking">Bokningar</Link>
+            <Link to="/booking">Boka bord</Link>
           </li>
           <li>
             <Link to="/contact">Kontakt</Link>
@@ -49,7 +49,7 @@ export const Nav = () => {
             <Link to="/">Hem</Link>
           </li>
           <li>
-            <Link to="/booking">Bokningar</Link>
+            <Link to="/booking">Boka bord</Link>
           </li>
           <li>
             <Link to="/contact">Kontakt</Link>

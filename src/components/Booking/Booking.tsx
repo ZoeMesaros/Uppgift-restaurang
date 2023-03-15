@@ -125,7 +125,7 @@ return (
     <button className="booking-form__btn" onClick={handleSearch}>Sök</button>
     {showBookingForm && (
     <form className="booking-form__form" onSubmit={handleSubmit}>
-      <h2 >Bokning för {date} kl {time}</h2>
+      <h2 className='booking-form__h2'>Bokning för {date} kl {time}</h2>
       <label htmlFor="name">Namn:</label>
       <input
         type="text"
@@ -165,7 +165,7 @@ return (
         required
         className="booking-form__input"
         pattern="[0-9]{3} - [0-9]{3} [0-9]{2} [0-9]{2}"
-        placeholder="xxx xxx xxxx" 
+        placeholder="XXX - XXX XX XX" 
       />
 
       <button type="submit" className="booking-form__btn">
