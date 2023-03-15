@@ -55,7 +55,7 @@ useEffect(() => {
         }
       );
       console.log(response.data);
-      alert('Bokning skapad!');
+      alert('Bokning skapad för ' + date + ' ' + time );
     } catch (error) {
       console.error(error);
       alert('Något gick fel');
@@ -77,6 +77,14 @@ useEffect(() => {
   }
 };
 
+const dateNow = new Date();
+
+let day = dateNow.getDate();
+let month = dateNow.getMonth() + 1;
+let year = dateNow.getFullYear();
+
+let currentDate = `${year}-0${month}-${day}`;
+console.log(currentDate); 
 return (
   <div className="booking-form">
     <label htmlFor="date">Datum:</label>
@@ -84,6 +92,9 @@ return (
     type="date"
     id="date"
     value={date}
+    min={currentDate}
+
+    required
     onChange={(e) => setDate(e.target.value)}
     className="booking-form__input"
     />
@@ -94,7 +105,7 @@ return (
       value={time}
       onChange={(e) => setTime(e.target.value)}
       className="booking-form__input"
-    >
+      required>
       <option value="18:00">18:00</option>
       <option value="21:00">21:00</option>
     </select>
@@ -105,6 +116,7 @@ return (
       id="numberOfGuests"
       min="1"
       max="6"
+      required
       value={numberOfGuests}
       onChange={(e) => setNumberOfGuests(Number(e.target.value))}
       className="booking-form__input"
@@ -152,6 +164,8 @@ return (
         onChange={(e) => setPhone(e.target.value)}
         required
         className="booking-form__input"
+        pattern="[0-9]{3} - [0-9]{3} [0-9]{2} [0-9]{2}"
+        placeholder="xxx xxx xxxx" 
       />
 
       <button type="submit" className="booking-form__btn">
