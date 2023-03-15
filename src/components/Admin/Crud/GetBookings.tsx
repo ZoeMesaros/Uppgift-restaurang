@@ -46,6 +46,13 @@ export const Bookings = () => {
     getData();
   }, []);
 
+  const navigate = useNavigate();
+
+  const handleclick = () => {
+    setFilterBookings(bookings);
+    setSearchText("");
+  };
+
   let bookingsHtml = filterbookings.map((booking) => {
     return <Booking booking={booking} key={booking._id}></Booking>;
   });
@@ -63,9 +70,12 @@ export const Bookings = () => {
               setSearchText(e.target.value);
             }}
           />
-          <button id="button">Sök</button>
+          <button className="button">Sök</button>
         </div>
       </form>
+      <button onClick={handleclick} className="btn">
+        Back
+      </button>
       <div id="bookingContainer"></div>
       <table className="bookings">
         <thead>
