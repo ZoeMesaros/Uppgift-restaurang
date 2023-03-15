@@ -1,11 +1,11 @@
 import { FormEvent, useEffect, useState } from "react";
-import "./Modalstyles.scss";
+import "./Modalstyle.scss";
 
 export default function Modal({ open, onClose }: any) {
   if (!open) return null;
-  const handleChange = (e: { target: { checked: any; }; }) => {
-    localStorage.setItem('checkbox',`${e.target.checked}`)
-}
+  const handleChange = (e: { target: { checked: any } }) => {
+    localStorage.setItem("checkbox", `${e.target.checked}`);
+  };
   const handleClose = (event: FormEvent) => {
     event.preventDefault();
     onClose();
@@ -21,15 +21,17 @@ export default function Modal({ open, onClose }: any) {
             användarupplevelse.
           </p>
           <label className="switch">
-          <input type="checkbox" name="gdprChecked"
-          required onChange={handleChange}/>
-          <span className="slider round"></span>
+            <input
+              type="checkbox"
+              name="gdprChecked"
+              required
+              onChange={handleChange}
+            />
+            <span className="slider round"></span>
           </label>
           <label className="checkLabel">Jag godkänner användarvillkoren</label>
           <br />
-          <button className="agreed">
-            Jag samtycker
-          </button>
+          <button className="agreed">Jag samtycker</button>
         </form>
       </div>
     </>

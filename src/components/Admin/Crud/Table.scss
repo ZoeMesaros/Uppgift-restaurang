@@ -2,34 +2,42 @@
 @use "../../styles/variables" as v;
 
 .table {
-	background-color: white;
-	Table {
-		table-layout: fixed;
-		width: 100%;
-		border-collapse: collapse;
-		border: 3px solid rgb(255, 255, 255);
-	  }
+  margin-top: 20px;
+  background-color: white;
+  border-collapse: collapse;
+  Table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid rgb(255, 255, 255);
+  }
 
-	  Th {
-		letter-spacing: 2px;
-	  }
-	  
-	  Td {
-		letter-spacing: 1px;
-	  }
-	  
-	  Tbody Td {
-		text-align: center;
-	  }
-	  
-	  Tfoot Th {
-		text-align: right;
-	  }
-	  Tbody Tr:nth-child(odd) {
-		background-color: #bebebe;
-	  }
-	  
-	  Tbody Tr:nth-child(even) {
-		background-color: #ffffff;
-	  }
+  Th {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    padding: 12px;
+  }
+
+  Td {
+    letter-spacing: 1px;
+  }
+
+  Tbody Td {
+    text-align: center;
+  }
+
+  Tfoot Th {
+    text-align: right;
+  }
+  Tbody Tr:nth-child(odd) {
+    background-color: #bebebe;
+  }
+
+  Tbody Tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+}
+
+.removeButton {
+  margin-bottom: 20px;
 }
