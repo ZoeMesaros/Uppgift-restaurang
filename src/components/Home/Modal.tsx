@@ -1,10 +1,14 @@
+import { FormEvent, useEffect, useState } from "react";
 import "./Modalstyles.scss";
 
 export default function Modal({ open, onClose }: any) {
   if (!open) return null;
-  const handleClose = (event: { preventDefault: () => void }) => {
-    onClose();
+  const handleChange = (e: { target: { checked: any; }; }) => {
+    localStorage.setItem('checkbox',`${e.target.checked}`)
+}
+  const handleClose = (event: FormEvent) => {
     event.preventDefault();
+    onClose();
   };
   return (
     <>
@@ -13,16 +17,19 @@ export default function Modal({ open, onClose }: any) {
         <h3>Användarvillkor</h3>
         <form onSubmit={handleClose}>
           <p>
-            Vi hanterar personuppgifter enligt GDPR för att <br /> underlätta
-            användarupplevelsen
+            Vi hanterar personuppgifter enligt GDPR för <br /> en bättre
+            användarupplevelse.
           </p>
-          <input type="checkbox" name="check" required />
+          <label className="switch">
+          <input type="checkbox" name="gdprChecked"
+          required onChange={handleChange}/>
+          <span className="slider round"></span>
+          </label>
           <label className="checkLabel">Jag godkänner användarvillkoren</label>
           <br />
-          <button className="agreed" onSubmit={handleClose}>
+          <button className="agreed">
             Jag samtycker
           </button>
-          <button>Läs mer</button>
         </form>
       </div>
     </>
