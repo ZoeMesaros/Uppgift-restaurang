@@ -26,26 +26,17 @@ const Allinfo = (props: IBookingProps) => {
 //
 export const Bookings = () => {
   const [bookings, setBookings] = useState<IBooking[]>([]);
+  const [filterbookings, setFilterBookings] = useState<IBooking[]>([]);
 
   const [searchText, setSearchText] = useState("");
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    bookings.filter((x) => x.customerId === searchText);
 
-    // bookings.filter((x) => {
-    //   setSearchText(x._id);
-    // });
-    // bookings.filter((x) => {
-    //   setSearchText(x.customerId);
-    // });
+    let filteredBookings = bookings.filter((x) => x.customerId === searchText);
 
-    // props.booking(searchText);
+    setFilterBookings(filteredBookings);
 
-    bookings.find((info) => {
-      setSearchText(info.customerId + info.time);
-    });
-    setSearchText("");
     console.log(searchText);
   };
 
@@ -55,12 +46,14 @@ export const Bookings = () => {
     const getData = async () => {
       let allBookings = await getBookings();
       setBookings(allBookings);
+      setFilterBookings(allBookings);
     };
 
     if (bookings.length > 0) return;
     getData();
-  });
-  let bookingsHtml = bookings.map((booking) => {
+  }, []);
+
+  let bookingsHtml = filterbookings.map((booking) => {
     return <Booking booking={booking} key={booking._id}></Booking>;
   });
 
