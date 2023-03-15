@@ -5,6 +5,7 @@ import { Booking } from "./ShowBooking";
 import "./Table.scss";
 import "./searchbooking.scss";
 import { ICustomer } from "../../../models/ICustomer";
+import { Link, useNavigate } from "react-router-dom";
 
 interface IBookingProps {
   booking: IBooking;
@@ -53,13 +54,12 @@ export const Bookings = () => {
     getData();
   }, []);
 
-  // Go back
-  //  document.getElementById("backbutton").addEventListener("click", goBack) as HTMLElement;
+  const navigate = useNavigate();
 
-  // function goBack() {
-  //   history.back();
-  // }
-  //
+  const handleclick = () => {
+    setFilterBookings(bookings);
+    setSearchText("");
+  };
 
   let bookingsHtml = filterbookings.map((booking) => {
     return <Booking booking={booking} key={booking._id}></Booking>;
@@ -78,14 +78,12 @@ export const Bookings = () => {
               setSearchText(e.target.value);
             }}
           />
-          <button id="button">Sök</button>
-          {/*  */}
-          <button type="button" id="backbutton">
-            Gå bakåt
-          </button>
-          {/*  */}
+          <button className="button">Sök</button>
         </div>
       </form>
+      <button onClick={handleclick} className="button">
+        Back
+      </button>
       <div id="bookingContainer"></div>
       <table className="bookings">
         <thead>

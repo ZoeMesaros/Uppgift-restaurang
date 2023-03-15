@@ -23,16 +23,22 @@
   font-size: 18px;
 }
 
-#button {
-  border: 1px solid black;
-  width: 50px;
-  height: 35px;
+.button {
+  border: none;
+  font-size: 20px;
+  padding: 10px 10px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
-#button:hover {
+.button:hover {
   cursor: pointer;
   color: white;
   background: green;
+}
+
+#backbutton:hover {
+  cursor: pointer;
+  background: green;
+  color: white;
 }
