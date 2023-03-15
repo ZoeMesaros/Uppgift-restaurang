@@ -1,4 +1,5 @@
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export const removeBooking = (id : string) => {
   axios.delete(`https://school-restaurant-api.azurewebsites.net/booking/delete/` + id)
@@ -9,5 +10,5 @@ export const removeBooking = (id : string) => {
       console.error('Något gick fel:', error);
     });
 
-    alert('Bookning borttagen')
+    Swal.fire('Bookning borttagen')
 }
