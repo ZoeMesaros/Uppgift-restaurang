@@ -54,11 +54,11 @@ export const Bookings = () => {
   }, []);
 
   // Go back
-  // document.getElementById("backbutton").addEventListener("click", goBack) as HTMLElement
+  //  document.getElementById("backbutton").addEventListener("click", goBack) as HTMLElement;
+
   // function goBack() {
   //   history.back();
   // }
-
   //
 
   let bookingsHtml = filterbookings.map((booking) => {
@@ -80,9 +80,9 @@ export const Bookings = () => {
           />
           <button id="button">Sök</button>
           {/*  */}
-          {/* <button type="button" id="backbutton">
+          <button type="button" id="backbutton">
             Gå bakåt
-          </button> */}
+          </button>
           {/*  */}
         </div>
       </form>
