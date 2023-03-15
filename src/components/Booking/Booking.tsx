@@ -58,7 +58,7 @@ useEffect(() => {
       Swal.fire('Bokning skapad för ' + date + ' ' + time );
     } catch (error) {
       console.error(error);
-      Swal.fire('Något gick fel');
+      Swal.fire('Något gick fel, dubbeloklla uppfifterna så att allt är korrekt');
     }
   } 
   };
