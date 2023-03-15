@@ -81,7 +81,7 @@ export const Bookings = () => {
           <button className="button">Sök</button>
         </div>
       </form>
-      <button onClick={handleclick} className="button">
+      <button onClick={handleclick} className="btn">
         Back
       </button>
       <div id="bookingContainer"></div>
