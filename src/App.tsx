@@ -5,7 +5,7 @@ import { Header } from "./components/Nav/Header";
 import { Footer } from "./components/Nav/Footer";
 
 function App() {
-  const API = "https://school-restaurant-api.azurewebsites.net";
+  // const API = "https://school-restaurant-api.azurewebsites.net";
 
   //_______________________________________________HÄMTA RESTURANG_______________________________________________________
   // axios
@@ -59,16 +59,16 @@ function App() {
 
   //_______________________________________________HÄMTA BOKINGAR FÖR HELA RESTURANGEN ___________________________________________
 
-  axios
-    .get(`${API}/booking/restaurant/6408978376187b915f68e168`)
-    .then(function (response) {
-      // handle success
-      console.log(response);
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    });
+  // axios
+  //   .get(`${API}/booking/restaurant/6408978376187b915f68e168`)
+  //   .then(function (response) {
+  //     // handle success
+  //     console.log(response);
+  //   })
+  //   .catch(function (error) {
+  //     // handle error
+  //     console.log(error);
+  //   });
 
   //_______________________________________________TA BORT EN BOKING ___________________________________________
 

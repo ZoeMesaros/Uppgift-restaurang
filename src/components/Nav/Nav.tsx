@@ -8,10 +8,8 @@ export const Nav = () => {
     let open = document.querySelector("#open") as HTMLElement;
     let close = document.querySelector("#close") as HTMLElement;
 
-    console.log(open);
 
     if (open) {
-      console.log(open);
       open.onclick = () => {
         menu?.classList.add("active");
       };

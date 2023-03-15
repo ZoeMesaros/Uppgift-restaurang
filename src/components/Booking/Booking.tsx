@@ -23,7 +23,6 @@ useEffect(() => {
   'https://school-restaurant-api.azurewebsites.net/booking/restaurant/6408978376187b915f68e168'
   );
   setBookings(response.data);
-  console.log(response.data);
   };
   fetchBookings();
   }, []);
@@ -85,7 +84,6 @@ let month = dateNow.getMonth() + 1;
 let year = dateNow.getFullYear();
 
 let currentDate = `${year}-0${month}-${day}`;
-console.log(currentDate); 
 return (
   <div className="booking-form">
     <label htmlFor="date">Datum:</label>
