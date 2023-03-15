@@ -5,7 +5,7 @@ import { Booking } from "./ShowBooking";
 import "./Table.scss";
 import "./searchbooking.scss";
 import { ICustomer } from "../../../models/ICustomer";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 interface IBookingProps {
   booking: IBooking;
