@@ -2,7 +2,7 @@ import { useEffect, useState, ChangeEvent, FormEvent } from "react";
 import { IBooking } from "../../../models/IBooking";
 import { getBookings, getCustomers } from "../../../services/bookingService";
 import { Booking } from "./ShowBooking";
-import "./GetBookings.scss";
+import "./Table.scss";
 import "./searchbooking.scss";
 import { ICustomer } from "../../../models/ICustomer";
 
@@ -53,12 +53,20 @@ export const Bookings = () => {
     getData();
   }, []);
 
+  // Go back
+  // document.getElementById("backbutton").addEventListener("click", goBack) as HTMLElement
+  // function goBack() {
+  //   history.back();
+  // }
+
+  //
+
   let bookingsHtml = filterbookings.map((booking) => {
     return <Booking booking={booking} key={booking._id}></Booking>;
   });
 
   return (
-    <>
+    <section className="tableContainer">
       <form id="searchForm" onSubmit={handleSubmit}>
         <p className="searchbookings">Sök bokning</p>
         <div className="btn-input">
@@ -71,25 +79,30 @@ export const Bookings = () => {
             }}
           />
           <button id="button">Sök</button>
+          {/*  */}
+          {/* <button type="button" id="backbutton">
+            Gå bakåt
+          </button> */}
+          {/*  */}
         </div>
       </form>
       <div id="bookingContainer"></div>
       <table className="bookings">
         <thead>
           <tr>
-            <th>Bokning Id</th>
-            <th>Kund If</th>
-            <th>Datum</th>
-            <th>Tid</th>
-            <th>Gäster</th>
-            <th>Förnamn</th>
-            <th>Efternamn</th>
-            <th>E-mail</th>
-            <th>Telefon</th>
+            <th scope="col">Bokning ID</th>
+            <th scope="col">Kund ID</th>
+            <th scope="col">Datum</th>
+            <th scope="col">Tid</th>
+            <th scope="col">Gäster</th>
+            <th scope="col">Förnamn</th>
+            <th scope="col">Efternamn</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Telefon</th>
           </tr>
         </thead>
         <tbody>{bookingsHtml}</tbody>
       </table>
-    </>
+    </section>
   );
 };
