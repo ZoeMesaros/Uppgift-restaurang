@@ -2,14 +2,10 @@ import { useEffect, useState, ChangeEvent, FormEvent } from "react";
 import { IBooking } from "../../../models/IBooking";
 import { getBookings, getCustomers } from "../../../services/bookingService";
 import { Booking } from "./ShowBooking";
-// import { getCustomers } from "../../../services/bookingService";
 import "./Table.scss";
 import "./searchbooking.scss";
 import { ICustomer } from "../../../models/ICustomer";
-
-interface IBookingProps {
-  booking: IBooking;
-}
+import { IBookingProps } from "../../../models/IBookingProps";
 
 const Allinfo = (props: IBookingProps) => {
   const [searchText, setSearchText] = useState<ICustomer>();
@@ -28,16 +24,12 @@ const Allinfo = (props: IBookingProps) => {
 export const Bookings = () => {
   const [bookings, setBookings] = useState<IBooking[]>([]);
   const [filterbookings, setFilterBookings] = useState<IBooking[]>([]);
-
   const [searchText, setSearchText] = useState("");
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-
     let filteredBookings = bookings.filter((x) => x.date === searchText);
-
     setFilterBookings(filteredBookings);
-
     console.log(searchText);
   };
 
