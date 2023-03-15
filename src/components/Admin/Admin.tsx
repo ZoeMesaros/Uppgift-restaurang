@@ -6,12 +6,13 @@ import BookingForm from "../Booking/Booking";
 // import { BookingDetails } from "./Crud/BookingDetail";
 import { Bookings } from "./Crud/GetBookings";
 import { Booking } from "./Crud/ShowBooking";
+import './Admin.scss'
 
 export const Admin = () => {
   return (
     <>
       <h1 className="admin__header">Admin</h1>
-      <SearchAdmin />
+      {/* <SearchAdmin /> */}
       <Bookings />
     </>
   );
