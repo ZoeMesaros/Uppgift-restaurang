@@ -4,6 +4,8 @@ import { ICustomer } from "../../../models/ICustomer";
 import { getCustomers } from "../../../services/bookingService";
 import { removeBooking } from "./removeBooking";
 import "./Showbooking.scss";
+import './GetBookings.scss'
+import './Table.scss'
 
 export const Booking = (props: IBookingProps) => {
   const [customer, setCustomer] = useState<ICustomer>();
