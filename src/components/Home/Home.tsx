@@ -1,9 +1,16 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Home.scss";
+import Modal from "./Modal";
 
 const Home = () => {
+  const [isOpen, setIsOpen] = useState(false);
+useEffect (() => {
+  setIsOpen(localStorage.getItem('checkbox') === 'false')
+}, [])
   return (
     <>
+      <Modal open={isOpen} onClose={() => setIsOpen(false)}></Modal>
       <main className="mainSection">
         <p className="mainText">
           Välkommen till Yummy buger! Vi serverar gourméthamburgare på
