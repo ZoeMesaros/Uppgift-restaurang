@@ -1,10 +1,12 @@
-table {
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as v;
+
+.bookings {
+  background-color: white;
     width: 100%;
     border-collapse: collapse;
     border: 3px solid rgb(207, 5, 5);
     text-align: center;
-  }
-  
   thead th:nth-child(1) {
     width: 20%;
   }
@@ -54,3 +56,4 @@ table {
   table {
     background-color: #ffffff;
   }
+}

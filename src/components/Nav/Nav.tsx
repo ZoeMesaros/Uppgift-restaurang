@@ -8,10 +8,8 @@ export const Nav = () => {
     let open = document.querySelector("#open") as HTMLElement;
     let close = document.querySelector("#close") as HTMLElement;
 
-    console.log(open);
 
     if (open) {
-      console.log(open);
       open.onclick = () => {
         menu?.classList.add("active");
       };
@@ -34,7 +32,7 @@ export const Nav = () => {
             <Link to="/">Hem</Link>
           </li>
           <li>
-            <Link to="/booking">Bokningar</Link>
+            <Link to="/booking">Boka bord</Link>
           </li>
           <li>
             <Link to="/contact">Kontakt</Link>
@@ -49,7 +47,7 @@ export const Nav = () => {
             <Link to="/">Hem</Link>
           </li>
           <li>
-            <Link to="/booking">Bokningar</Link>
+            <Link to="/booking">Boka bord</Link>
           </li>
           <li>
             <Link to="/contact">Kontakt</Link>

@@ -1,5 +1,4 @@
 import axios from "axios";
-import { IApiResponse } from "../models/IApiResponse";
 import { IBooking } from "../models/IBooking";
 import { ICustomer } from "../models/ICustomer";
 
