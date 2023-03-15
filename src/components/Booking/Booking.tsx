@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
 import { IBookingSide } from '../../models/IBookingSide';
 import './Booking.scss';
 
@@ -55,10 +56,10 @@ useEffect(() => {
         }
       );
       console.log(response.data);
-      alert('Bokning skapad för ' + date + ' ' + time );
+      Swal.fire('Bokning skapad för ' + date + ' ' + time );
     } catch (error) {
       console.error(error);
-      alert('Något gick fel');
+      Swal.fire('Något gick fel');
     }
   } 
   };
@@ -73,7 +74,7 @@ useEffect(() => {
   if (totalBookings <= TotalTables) {
     setShowBookingForm(true);
   } else {
-    alert('Det finns tyvärr inga lediga bord på denna tidpunkt.');
+    Swal.fire('Det finns tyvärr inga lediga bord på denna tidpunkt.');
   }
 };
 
