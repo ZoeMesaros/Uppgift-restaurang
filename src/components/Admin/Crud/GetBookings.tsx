@@ -1,10 +1,6 @@
 import { useEffect, useState, ChangeEvent, FormEvent } from "react";
 import { IBooking } from "../../../models/IBooking";
-<<<<<<< HEAD
 import { getBookings, getCustomers } from "../../../services/bookingService";
-=======
-import { getBookings } from "../../../services/bookingService";
->>>>>>> 853c25000353682a3d86cb6c0f4aa85ba4a8a1db
 import { Booking } from "./ShowBooking";
 // import { getCustomers } from "../../../services/bookingService";
 import "./Table.scss";
