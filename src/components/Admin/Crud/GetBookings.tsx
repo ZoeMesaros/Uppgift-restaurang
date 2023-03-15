@@ -2,6 +2,7 @@ import { useEffect, useState, ChangeEvent, FormEvent } from "react";
 import { IBooking } from "../../../models/IBooking";
 import { getBookings} from "../../../services/bookingService";
 import { Booking } from "./ShowBooking";
+import { getCustomers } from "../../../services/bookingService";
 import "./Table.scss";
 import "./searchbooking.scss";
 import { ICustomer } from "../../../models/ICustomer";

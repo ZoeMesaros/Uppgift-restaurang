@@ -11,7 +11,7 @@ export const Admin = () => {
   return (
     <>
       <h1 className="admin__header">Admin</h1>
-      <SearchAdmin />
+      {/* <SearchAdmin /> */}
       <Bookings />
     </>
   );
