@@ -5,7 +5,6 @@ import { Booking } from "./ShowBooking";
 import "./Table.scss";
 import "./searchbooking.scss";
 import { ICustomer } from "../../../models/ICustomer";
-import { Link, useNavigate } from "react-router-dom";
 
 interface IBookingProps {
   booking: IBooking;
@@ -53,8 +52,6 @@ export const Bookings = () => {
     if (bookings.length > 0) return;
     getData();
   }, []);
-
-  const navigate = useNavigate();
 
   const handleclick = () => {
     setFilterBookings(bookings);
