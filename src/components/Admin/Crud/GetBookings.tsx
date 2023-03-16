@@ -29,16 +29,12 @@ const Allinfo = (props: IBookingProps) => {
 export const Bookings = () => {
   const [bookings, setBookings] = useState<IBooking[]>([]);
   const [filterbookings, setFilterBookings] = useState<IBooking[]>([]);
-
   const [searchText, setSearchText] = useState("");
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-
     let filteredBookings = bookings.filter((x) => x.date === searchText);
-
     setFilterBookings(filteredBookings);
-
     console.log(searchText);
   };
 

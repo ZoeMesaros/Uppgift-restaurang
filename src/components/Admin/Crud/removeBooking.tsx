@@ -10,5 +10,5 @@ export const removeBooking = (id : string) => {
       console.error('Något gick fel:', error);
     });
 
-    Swal.fire('Bookning borttagen')
+    Swal.fire('Bokning borttagen')
 }
