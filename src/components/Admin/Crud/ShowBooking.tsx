@@ -3,9 +3,9 @@ import { IBookingProps } from "../../../models/IBookingProps";
 import { ICustomer } from "../../../models/ICustomer";
 import { getCustomers } from "../../../services/bookingService";
 import { removeBooking } from "./removeBooking";
-import "./Showbooking.scss";
-import './GetBookings.scss'
-import './Table.scss'
+import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
+import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
+import "./Table.scss";
 
 export const Booking = (props: IBookingProps) => {
   const [customer, setCustomer] = useState<ICustomer>();
@@ -26,26 +26,29 @@ export const Booking = (props: IBookingProps) => {
   };
 
   if (isDeleted) {
-    return null; 
+    return null;
   }
 
   return (
     <>
-      <tr>
-        <td>{props.booking._id}</td>
-        <td>{props.booking.customerId}</td>
-        <td>{props.booking.date}</td>
-        <td>{props.booking.time}</td>
-        <td>{props.booking.numberOfGuests}</td>
-        <td>{customer?.name}</td>
-        <td>{customer?.lastname}</td>
-        <td>{customer?.email}</td>
-        <td>{customer?.phone}</td>
-        <td>{customer?.id}</td>
-        <td>
-          <button onClick={handleDeleteClick}>Ta bort</button>
-        </td>
-      </tr>
+      <Tr>
+        <Td className="d-none d-md-table-cell">{props.booking._id}</Td>
+        <Td className="d-none d-md-table-cell">{props.booking.customerId}</Td>
+        <Td className="d-none d-md-table-cell">{props.booking.date}</Td>
+        <Td className="d-none d-md-table-cell">{props.booking.time}</Td>
+        <Td className="d-none d-md-table-cell">
+          {props.booking.numberOfGuests}
+        </Td>
+        <Td className="d-none d-md-table-cell">{customer?.name}</Td>
+        <Td className="d-none d-md-table-cell">{customer?.lastname}</Td>
+        <Td className="d-none d-md-table-cell">{customer?.email}</Td>
+        <Td className="d-none d-md-table-cell">{customer?.phone}</Td>
+        <Td className="d-none d-md-table-cell">
+          <button className="removeButton" onClick={handleDeleteClick}>
+            Ta bort
+          </button>
+        </Td>
+      </Tr>
     </>
   );
 };
