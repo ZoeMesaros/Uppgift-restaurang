@@ -1,10 +1,13 @@
 import { useEffect, useState, ChangeEvent, FormEvent } from "react";
 import { IBooking } from "../../../models/IBooking";
-import { getBookings, getCustomers } from "../../../services/bookingService";
+import { getBookings } from "../../../services/bookingService";
 import { Booking } from "./ShowBooking";
+import { getCustomers } from "../../../services/bookingService";
 import "./Table.scss";
 import "./searchbooking.scss";
 import { ICustomer } from "../../../models/ICustomer";
+import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
+import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 
 interface IBookingProps {
   booking: IBooking;
@@ -23,24 +26,17 @@ const Allinfo = (props: IBookingProps) => {
   return <>{Allinfo}</>;
 };
 
-//
 export const Bookings = () => {
   const [bookings, setBookings] = useState<IBooking[]>([]);
   const [filterbookings, setFilterBookings] = useState<IBooking[]>([]);
-
   const [searchText, setSearchText] = useState("");
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-
     let filteredBookings = bookings.filter((x) => x.date === searchText);
-
     setFilterBookings(filteredBookings);
-
     console.log(searchText);
   };
-
-  //
 
   useEffect(() => {
     const getData = async () => {
@@ -52,7 +48,6 @@ export const Bookings = () => {
     if (bookings.length > 0) return;
     getData();
   }, []);
-
   const handleclick = () => {
     setFilterBookings(bookings);
     setSearchText("");
@@ -75,6 +70,7 @@ export const Bookings = () => {
               setSearchText(e.target.value);
             }}
           />
+
           <button className="button">Sök</button>
         </div>
       </form>
@@ -82,22 +78,22 @@ export const Bookings = () => {
         Back
       </button>
       <div id="bookingContainer"></div>
-      <table className="bookings">
-        <thead>
-          <tr>
-            <th scope="col">Bokning ID</th>
-            <th scope="col">Kund ID</th>
-            <th scope="col">Datum</th>
-            <th scope="col">Tid</th>
-            <th scope="col">Gäster</th>
-            <th scope="col">Förnamn</th>
-            <th scope="col">Efternamn</th>
-            <th scope="col">E-mail</th>
-            <th scope="col">Telefon</th>
-          </tr>
-        </thead>
-        <tbody>{bookingsHtml}</tbody>
-      </table>
+      <Table className="table">
+        <Thead className="d-none d-md-table-header-group">
+          <Tr>
+            <Th className="d-sm-none d-md-table-cell">Bokning ID</Th>
+            <Th className="d-sm-none d-md-table-cell">Kund ID</Th>
+            <Th className="d-sm-none d-md-table-cell">Datum</Th>
+            <Th className="d-sm-none d-md-table-cell">Tid</Th>
+            <Th className="d-sm-none d-md-table-cell">Gäster</Th>
+            <Th className="d-sm-none d-md-table-cell">Förnamn</Th>
+            <Th className="d-sm-none d-md-table-cell">Efternamn</Th>
+            <Th className="d-sm-none d-md-table-cell">E-mail</Th>
+            <Th className="d-sm-none d-md-table-cell">Telefon</Th>
+          </Tr>
+        </Thead>
+        <Tbody>{bookingsHtml}</Tbody>
+      </Table>
     </section>
   );
 };
