@@ -83,7 +83,7 @@ const BookingForm: React.FC = () => {
   let month = dateNow.getMonth() + 1;
   let year = dateNow.getFullYear();
   let currentDate = `${year}-0${month}-${day}`;
-  
+
   return (
     <div className="booking-form">
       <label htmlFor="date">Datum:</label>
@@ -92,7 +92,6 @@ const BookingForm: React.FC = () => {
       id="date"
       value={date}
       min={currentDate}
-
       required
       onChange={(e) => setDate(e.target.value)}
       className="booking-form__input"
