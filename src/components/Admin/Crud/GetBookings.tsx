@@ -5,7 +5,6 @@ import { Booking } from "./ShowBooking";
 import "./Table.scss";
 import "./searchbooking.scss";
 import { ICustomer } from "../../../models/ICustomer";
-import { useNavigate } from "react-router-dom";
 
 interface IBookingProps {
   booking: IBooking;
@@ -24,7 +23,6 @@ const Allinfo = (props: IBookingProps) => {
   return <>{Allinfo}</>;
 };
 
-//
 export const Bookings = () => {
   const [bookings, setBookings] = useState<IBooking[]>([]);
   const [filterbookings, setFilterBookings] = useState<IBooking[]>([]);
@@ -41,8 +39,6 @@ export const Bookings = () => {
     console.log(searchText);
   };
 
-  //
-
   useEffect(() => {
     const getData = async () => {
       let allBookings = await getBookings();
@@ -53,9 +49,6 @@ export const Bookings = () => {
     if (bookings.length > 0) return;
     getData();
   }, []);
-
-  const navigate = useNavigate();
-
   const handleclick = () => {
     setFilterBookings(bookings);
     setSearchText("");
