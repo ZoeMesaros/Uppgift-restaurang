@@ -74,6 +74,7 @@ export const Bookings = () => {
               setSearchText(e.target.value);
             }}
           />
+
           <button className="button">Sök</button>
         </div>
       </form>
