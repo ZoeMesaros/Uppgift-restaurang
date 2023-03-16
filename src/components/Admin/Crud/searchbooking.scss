@@ -13,20 +13,25 @@
   text-shadow: 0 4px 4px black;
 }
 
+.btn-input {
+  font-size: 70px;
+}
+
 #searchText {
   margin: auto;
   width: 300px;
   height: 35px;
-  border: 1px solid black;
+  border: none;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   font-size: 18px;
 }
 
 .button {
+  position: relative;
   border: none;
-  font-size: 20px;
-  padding: 10px 10px;
+  top: -1.9px;
+  padding: 11px 10px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
