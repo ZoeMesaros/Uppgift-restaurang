@@ -9,7 +9,7 @@ body {
   border: 3px solid red;
   border-radius: 30px;
   padding-top: 20px;
-  padding-bottom: 40px;
+  padding-bottom: 65px;
   padding-left: 20px;
   padding-right: 20px;
   margin-bottom: 30px;
@@ -28,6 +28,7 @@ body {
   @include m.md {
     width: 35%;
     height: 80%;
+    padding-bottom: 25px;
   }
 
   input[type="date"] {
@@ -84,12 +85,15 @@ body {
     font-size: 1rem;
     cursor: pointer;
   }
-
-  button[type="submit"] {
-    margin-bottom: 95px;
+  .booking-form__btn {
+    width: 130px;
+    box-shadow: inset 0 -0.6em 1em -0.35em rgba(89, 89, 89, 0.587),
+      inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+      inset 0 0 0em 0.1em rgba(225, 6, 6, 0.926);
+    color: #000000;
   }
 
-  #confirmButtonText {
-    background-color: red;
+  button[type="submit"] {
+    margin-bottom: 120px;
   }
 }
