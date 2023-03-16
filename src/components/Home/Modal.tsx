@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent } from "react";
 import "./Modalstyle.scss";
 
 export default function Modal({ open, onClose }: any) {

@@ -5,9 +5,9 @@ import Modal from "./Modal";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
-useEffect (() => {
-  setIsOpen((localStorage.getItem('checkbox') || "false") === 'false')
-}, [])
+  useEffect(() => {
+    setIsOpen((localStorage.getItem("checkbox") || "false") === "false");
+  }, []);
   return (
     <>
       <Modal open={isOpen} onClose={() => setIsOpen(false)}></Modal>
