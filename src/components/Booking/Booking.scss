@@ -14,7 +14,7 @@ body {
   padding-right: 20px;
   margin-bottom: 30px;
   margin: 0 auto;
-  height: 102vh;
+  height: 120vh;
   width: 55%;
   background-color: rgb(255, 255, 255);
   display: flex;
@@ -34,7 +34,12 @@ body {
     padding-left: 12px;
     padding-right: 12px;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    width: 50%;
+    width: 80%;
+    padding-bottom: 30px;
+    @include m.md {
+      padding-bottom: 15px;
+      width: 55%;
+    }
   }
 
   input[type="tel"] {
@@ -43,8 +48,11 @@ body {
 
   #time {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    width: 50%;
+    width: 80%;
     padding-left: 12px;
+    @include m.md {
+      width: 55%;
+    }
   }
   input[type="number"] {
     padding-right: 12px;
