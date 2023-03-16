@@ -6,6 +6,7 @@ import { removeBooking } from "./removeBooking";
 import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 import "./Table.scss";
+// import 'sweetalert2/src/sweetalert2.scss'
 
 export const Booking = (props: IBookingProps) => {
   const [customer, setCustomer] = useState<ICustomer>();
