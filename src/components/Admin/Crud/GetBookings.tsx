@@ -8,10 +8,8 @@ import "./searchbooking.scss";
 import { ICustomer } from "../../../models/ICustomer";
 import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
+import { IBookingProps } from "../../../models/IBookingProps";
 
-interface IBookingProps {
-  booking: IBooking;
-}
 
 const Allinfo = (props: IBookingProps) => {
   const [searchText, setSearchText] = useState<ICustomer>();
@@ -75,7 +73,7 @@ export const Bookings = () => {
         </div>
       </form>
       <button onClick={handleclick} className="btn">
-        Back
+        Visa alla
       </button>
       <div id="bookingContainer"></div>
       <Table className="table">
