@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { IBookingProps } from "../../../models/IBookingProps";
 import { ICustomer } from "../../../models/ICustomer";
-import { getCustomers } from "../../../services/bookingService";
-import { removeBooking } from "./removeBooking";
+import { getCustomers, removeBooking } from "../../../services/bookingService";
 import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 import "./Table.scss";
