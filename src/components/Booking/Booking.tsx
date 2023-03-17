@@ -70,7 +70,7 @@ const BookingForm: React.FC = () => {
     const totalBookings = matchingBookings.length;
     console.log(matchingBookings);
 
-    if (totalBookings <= TotalTables) {
+    if (totalBookings < TotalTables) {
       setShowBookingForm(true);
     } else {
       Swal.fire('Det finns tyvärr inga lediga bord på denna tidpunkt.');

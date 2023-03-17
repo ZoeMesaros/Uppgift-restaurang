@@ -16,6 +16,8 @@ export const Booking = (props: IBookingProps) => {
     const getData = async () => {
       let allCustomers = await getCustomers(props.booking.customerId);
       setCustomer(allCustomers[0]);
+      console.log(allCustomers);
+      
     };
     if (customer) return;
     getData();
