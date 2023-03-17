@@ -10,7 +10,6 @@ import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 import { IBookingProps } from "../../../models/IBookingProps";
 
-
 const Allinfo = (props: IBookingProps) => {
   const [searchText, setSearchText] = useState<ICustomer>();
   useEffect(() => {

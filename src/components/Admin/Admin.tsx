@@ -1,11 +1,10 @@
 import { Bookings } from "./Crud/GetBookings";
-import './Admin.scss'
+import "./Admin.scss";
 
 export const Admin = () => {
   return (
     <>
       <h1 className="admin__header">Admin</h1>
-      {/* <SearchAdmin /> */}
       <Bookings />
     </>
   );

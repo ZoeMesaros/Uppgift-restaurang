@@ -19,10 +19,12 @@ export const Form = () => {
             <input placeholder="Email" type="email" required />
           </fieldset>
           <fieldset>
-            <input type="tel"
-             required
-             pattern="[0-9]{3} - [0-9]{3} [0-9]{2} [0-9]{2}"
-             placeholder="Telefon XXX - XXX XX XX" />
+            <input
+              type="tel"
+              required
+              pattern="[0-9]{3} - [0-9]{3} [0-9]{2} [0-9]{2}"
+              placeholder="Telefon XXX - XXX XX XX"
+            />
           </fieldset>
           <fieldset>
             <textarea placeholder="Ditt meddelande..." required></textarea>
