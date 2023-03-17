@@ -13,7 +13,7 @@ const Home = () => {
       <Modal open={isOpen} onClose={() => setIsOpen(false)}></Modal>
       <main className="mainSection">
         <p className="mainText">
-          Välkommen till Yummy buger! Vi serverar gourméthamburgare på
+          Välkommen till Yummy Burger! Vi serverar gourméthamburgare på
           amerikanskt vis. Boka ett bord via vårt bokningssystem eller{" "}
           <span>
             <Link to="/contact">kontakta oss.</Link>
