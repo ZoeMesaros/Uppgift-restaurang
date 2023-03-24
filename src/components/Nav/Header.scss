@@ -1,12 +1,26 @@
 @use "../styles/mixins" as m;
 @use "../styles/variables" as v;
 
+body:before {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  display: block;
+  background: url(../../assets/yummy-burger-french-fries-ketchup.jpg) no-repeat
+    50% 50%;
+  background-size: cover;
+}
+
 body {
-  background-image: url(../../assets/yummy-burger-french-fries-ketchup.jpg);
-  background-size: contain;
-  background-position: right 15px;
+  /* background-image: url(../../assets/yummy-burger-french-fries-ketchup.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%; */
   width: 100%;
-  height: 99vh;
+  height: auto;
   @include m.xs {
     background-size: cover;
     background-repeat: no-repeat;
